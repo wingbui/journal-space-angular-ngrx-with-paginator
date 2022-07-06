@@ -1,0 +1,26 @@
+<header
+  class="border border-sky-400 border-solid flex justify-between p-2 mb-4"
+>
+  <div>
+    <span class="font-bold uppercase text-green-400">journal</span>
+    <span class="font-bold uppercase text-sky-400">Space</span>
+  </div>
+  <ul class="flex gap-5 justify-between">
+    <li>
+      <a [routerLink]="['/']">Home</a>
+    </li>
+    <ng-container *ngIf="isAnonymous$ | async">
+      <li>
+        <a [routerLink]="['/login']">Login</a>
+      </li>
+      <li>
+        <a [routerLink]="['/register']">Register</a>
+      </li>
+    </ng-container>
+    <li *ngIf="currentUser$ | async as currentUser">
+      <span class="text-green-400 cursor-pointer">
+        {{ currentUser.username | titlecase }}
+      </span>
+    </li>
+  </ul>
+</header>

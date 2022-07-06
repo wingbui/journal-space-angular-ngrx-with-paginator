@@ -1,0 +1,46 @@
+<div class="max-w-xl p-8 border border-blue mx-auto grid">
+  <div class="text-center pb-8">
+    <h1 class="font-bold uppercase">Login</h1>
+    <a [routerLink]="['/register']">Do not have an account?</a>
+    <app-backend-error-messages
+      *ngIf="backendErrors$ | async"
+      [backendErrors]="backendErrors$ | async"
+    >
+    </app-backend-error-messages>
+  </div>
+
+  <form
+    [formGroup]="form"
+    class="max-w-xs mx-auto grid gap-3"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="grid grid-cols-3">
+      <label class="self-center">Email</label>
+      <input
+        class="col-span-2 border border-gray-200 border-solid rounded-l px-2 py-1"
+        formControlName="email"
+      />
+    </div>
+
+    <div class="grid grid-cols-3">
+      <label class="self-center">Password</label>
+      <input
+        class="col-span-2 border border-gray-200 border-solid rounded-l px-2 py-1"
+        formControlName="password"
+      />
+    </div>
+
+    <div class="text-center grid grid-cols-3">
+      <div></div>
+      <div class="text-center col-span-2">
+        <button
+          type="Submit"
+          class="w-full bg-green-300 border-1 rounded py-1 px-2 cursor-pointer"
+          [disabled]="isSubmitting$ | async"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
