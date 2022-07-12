@@ -1,1 +1,25 @@
-<p>feed works!</p>
+<div>
+  <div class="text-center" *ngIf="isLoading$ | async">Loading....</div>
+
+  <section *ngIf="data$ | async" class="grid gap-3">
+    <article
+      class="border border-solid p-3"
+      *ngFor="let article of (data$ | async)?.articles"
+    >
+      <h3 class="font-semibold">{{ article.title }}</h3>
+      <p>{{ article.description }}</p>
+    </article>
+  </section>
+
+  <section>
+    <!-- what we need for a paginator: totalItems, limit, baseURL, currentPage -->
+    <ng-container *ngIf="data$ | async as data">
+      <app-paginator
+        [totalItems]="data.articlesCount"
+        [limit]="limit"
+        [baseURL]="baseURL"
+        [currentPage]="currentPage"
+      ></app-paginator>
+    </ng-container>
+  </section>
+</div>
