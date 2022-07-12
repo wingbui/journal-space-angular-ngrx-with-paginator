@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { select, Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
+
 import { registerAction } from 'src/app/auth/store/actions'
 import {
   selectAuthIsSubmitting,
