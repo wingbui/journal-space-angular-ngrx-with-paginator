@@ -10,7 +10,7 @@ import { authReducer } from 'src/app/auth/store/reducer'
 import { BackendErrorMessagesModule } from 'src/app/shared/modules/backend-error-messages/backend-error-messages.module'
 import { LoginEffect } from 'src/app/auth/store/effects/login.effect'
 import { LoginComponent } from './components/login/login/login.component'
-import { GetCurrentUserEffect } from 'src/app/auth/store/effects/get-current-user'
+import { GetCurrentUserEffect } from 'src/app/auth/store/effects/get-current-user.effect'
 import { RegisterComponent } from 'src/app/auth/components/register/register/register.component'
 
 const routes = [

@@ -1,5 +1,5 @@
 import { AuthState } from 'src/app/auth/types/auth-state'
-import { Action, createReducer, on } from '@ngrx/store'
+import { createReducer, on } from '@ngrx/store'
 import {
   getCurrentUser,
   getCurrentUserFailure,
@@ -11,7 +11,6 @@ import {
   registerActionFailure,
   registerActionSuccess,
 } from 'src/app/auth/store/actions'
-import { state } from '@angular/animations'
 
 const initialState: AuthState = {
   currentUser: null,
