@@ -1,0 +1,13 @@
+<ul class="flex gap-2 m-3 justify-center">
+  <li
+    class="border border-solid p-2"
+    [ngClass]="{ active: currentPageProps === page }"
+    *ngFor="let page of pages"
+  >
+    <a
+      [routerLink]="baseURLProps"
+      [queryParams]="{ page: page}"
+      >{{ page }}</a
+    >
+  </li>
+</ul>
